@@ -4,12 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Face
@@ -77,6 +81,55 @@ fun MyApp() {
             Icon(imageVector = Icons.Filled.Add, contentDescription = "icon", tint = Color.White)
             Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
             Text(text = "ADD")
+        }
+
+        Button(
+            onClick = {/*TODO*/ },
+            shape = RoundedCornerShape(topStart = 8.dp, bottomEnd = 8.dp)
+        ) {
+            Text(text = "Rounded Corner Button")
+        }
+
+        Button(
+            onClick = {/*TODO*/ },
+            shape = CutCornerShape(topEnd = 8.dp, bottomStart = 28.dp)
+        ) {
+            Text(text = "Cut Corner Button")
+        }
+
+        Button(
+            onClick = {/*TODO*/ },
+            modifier = Modifier.size(100.dp),
+            shape = CircleShape
+        ) {
+            Text(text = "Circle Button")
+        }
+
+        Button(
+            onClick = {/*TODO*/ },
+            modifier = Modifier.size(60.dp),
+            shape = CircleShape
+        ) {
+            Icon(
+                imageVector = Icons.Filled.Add, contentDescription = "icon", tint = Color.White,
+                modifier = Modifier.size(ButtonDefaults.IconSize)
+            )
+        }
+
+        Button(
+            onClick = {/*TODO*/ },
+            elevation = ButtonDefaults.buttonElevation(
+                defaultElevation = 10.dp,
+                pressedElevation = 6.dp
+            ),
+            shape = CutCornerShape(8.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xfffedbd0),
+                contentColor = Color.Gray
+            ),
+            border = BorderStroke(1.dp, color = Color(0xFFA2645F))
+        ) {
+            Text(text = "Simple Button")
         }
 
     }
